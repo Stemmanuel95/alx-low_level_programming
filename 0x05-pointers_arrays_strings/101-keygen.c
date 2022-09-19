@@ -1,24 +1,36 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#define stopLimit 2645
+#define asciiStop 127
+#define asciiStart 32
+
 /**
- * main - generates keygen.
- * Return: 0 Always.
+ * main - generates a random password
+ *
+ * Return: 0 if success
+ *
  */
 int main(void)
 {
-	int r = 0, c = 0;
-	time_t t;
+	char password[100];
+	int randValue, num = 0, i = 0;
 
-	srand((unsigned int) time(&t));
-	while (c < 2772)
+	srand(time(NULL));
+
+	while (num < stopLimit)
 	{
-		r = rand() % 128;
-		if ((c + r) > 2772)
-			break;
-		c = c + r;
-		printf("%c", r);
+		randValue = random() % asciiStop;
+		if (randValue > asciiStart)
+		{
+			password[i++] = randValue;
+			num += randValue;
+		}
 	}
-	printf("%c\n", (2772 - c));
+
+	password[i++] = (2772 - num);
+	password[i] = '\0';
+	printf("%s", password);
+
 	return (0);
 }
