@@ -36,4 +36,4 @@ node2 = (node2->next)->next;
 }
 
 return (NULL);
-
+}
