@@ -1,1 +1,1 @@
-# Solutions to my Hash tables project 
+# Solutions to my Hash tables project
