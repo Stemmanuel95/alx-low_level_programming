@@ -6,7 +6,7 @@
  * twice in `array`
  * @array: pointer to first element of array to seach
  * @size: number of elements in array
- * @value: key value to search for
+ * @value: value to search for
  *
  * Return: index containing `value`, or -1 if `value` not found or
  * `array` is NULL
